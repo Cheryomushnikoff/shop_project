@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Каталог {% endblock title %}
+
+{% block content %}
+        <ul class="nav justify-content-center">
+            {% for cat in categories %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'catalog_category' cat.slug %}">{{ cat.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+	<div class="catalog-container">
+    {% for product in catalog %}
+    	<div class="catalog-item">
+            <img class="norm-params" src="{{ product.image.url }}" alt="">
+            <h5>{{ product.name }}</h5>
+            <h5>{{ product.price }}</h5>
+        </div>
+    {% endfor %}
+
+    </div>
+{% endblock content %}

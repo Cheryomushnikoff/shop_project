@@ -20,6 +20,10 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
+7. Создать суперпользователя
+```
+python manage.py createsuperuser
+```
 6. Можно запускать сервер
 ```
  python manage.py runserver
